@@ -3,7 +3,8 @@
  *   Hari dan Tanggal    : Selasa, 5 Mei 2026
  *   Nama (NIM)          : Faiz Azmi Irwan (13224040)
  *   Nama File           : prak_soal2.c
- *   Deskripsi           : 
+ *   Deskripsi           : Menghitung jumlah tanda kurung tambahan agar string menjadi valid berupa semua tanda kurung'
+ *                         memiliki pasangan tertutup.
  * 
  */
 
@@ -66,6 +67,8 @@ int main() {
     scanf("%[^\n]", input);
     int string_length = strlen(input);
 
+    printf("%d\n", string_length);
+
     for (int i = 0; i < string_length; i++) {
         push(&kurung, input[i]);
     }
@@ -85,10 +88,12 @@ int main() {
                 n++;
             }
             pop(&kurung);
-        } else {
+        }
+        if (peek(&kurung) == 1) {
             pop(&kurung);
             count++;
         }
+
         for (int i = 0; i < n; i++) {
             push(&kurung, pop(&temp));
         }
@@ -96,9 +101,12 @@ int main() {
     }
     count++;
 
-    //printf("%d\n", count);
-    int output = string_length - count;
-    printf("%d\n", output);
+    if (string_length == 1) {
+        printf("%d\n", string_length);
+    } else {
+        int output = string_length - count;
+        printf("%d\n", output);
+    }
 
     return 0;
 }
