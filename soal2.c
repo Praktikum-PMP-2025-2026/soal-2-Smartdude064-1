@@ -96,7 +96,7 @@ int main() {
     }
     count++;
 
-    printf("%d\n", count);
+    //printf("%d\n", count);
     int output = string_length - count;
     printf("%d\n", output);
 
