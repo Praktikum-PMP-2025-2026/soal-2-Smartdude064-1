@@ -67,7 +67,7 @@ int main() {
     scanf("%[^\n]", input);
     int string_length = strlen(input);
 
-    printf("%d\n", string_length);
+    //printf("%d\n", string_length);
 
     for (int i = 0; i < string_length; i++) {
         push(&kurung, input[i]);
